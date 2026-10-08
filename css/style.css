@@ -1,0 +1,660 @@
+/* Configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f6f8f5;
+    color: #26352c;
+    line-height: 1.6;
+}
+
+/* Acessibilidade */
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 15px;
+    background-color: #315b45;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dce5df;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1100px;
+    margin: auto;
+    min-height: 70px;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    color: #315b45;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul a {
+    color: #34483b;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav ul a:hover {
+    color: #5b8669;
+}
+
+/* Área principal */
+.hero {
+    min-height: 540px;
+    padding: 80px 25px;
+
+    display: flex;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #315b45,
+        #5b8669
+    );
+}
+
+.hero-texto {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    color: white;
+}
+
+.destaque {
+    color: #dcebdd;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    max-width: 650px;
+    font-size: 3.2rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-texto > p:not(.destaque) {
+    max-width: 650px;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+/* Barra de pesquisa */
+.barra-pesquisa {
+    max-width: 600px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.barra-pesquisa input {
+    flex: 1;
+    padding: 14px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.barra-pesquisa input:focus {
+    outline: 3px solid #dcebdd;
+}
+
+.barra-pesquisa button {
+    border: none;
+    background-color: #ffffff;
+    color: #315b45;
+    padding: 14px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.barra-pesquisa button:hover {
+    background-color: #e9f0eb;
+}
+
+/* Botões */
+.botao {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #315b45;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.botao:hover {
+    background-color: #e9f0eb;
+}
+
+/* Seções */
+.secao {
+    max-width: 1100px;
+    margin: auto;
+    padding: 75px 25px;
+}
+
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-secao .destaque {
+    color: #5b8669;
+}
+
+.titulo-secao h2 {
+    color: #315b45;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.titulo-secao > p:last-child {
+    color: #617066;
+}
+
+/* Livros */
+.livros {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.livro {
+    background-color: #ffffff;
+    border: 1px solid #dce5df;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+}
+
+.capa {
+    width: 90px;
+    height: 110px;
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #e9f0eb;
+    border-radius: 8px;
+    font-size: 2.5rem;
+}
+
+.livro h3 {
+    color: #315b45;
+    margin-bottom: 8px;
+}
+
+.livro p {
+    color: #68766d;
+    margin-bottom: 15px;
+}
+
+.livro a {
+    color: #5b8669;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.livro a:hover {
+    text-decoration: underline;
+}
+
+/* Categorias */
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.categoria {
+    background-color: #e9f0eb;
+    border-radius: 12px;
+    padding: 25px 15px;
+    text-align: center;
+}
+
+.categoria span {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.categoria h3 {
+    color: #315b45;
+}
+
+/* Serviços */
+.servicos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.servico {
+    background-color: #ffffff;
+    border-left: 4px solid #5b8669;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.servico span {
+    font-size: 2rem;
+}
+
+.servico h3 {
+    color: #315b45;
+    margin: 10px 0;
+}
+
+.servico p {
+    color: #68766d;
+}
+
+/* Rodapé */
+footer {
+    background-color: #26352c;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+
+    .livros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .categorias {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .servicos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Celular */
+@media (max-width: 650px) {
+
+    nav {
+        flex-direction: column;
+        padding: 18px 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-texto > p:not(.destaque) {
+        font-size: 1rem;
+    }
+
+    .barra-pesquisa {
+        flex-direction: column;
+    }
+
+    .barra-pesquisa button {
+        width: 100%;
+    }
+
+    .secao {
+        padding: 55px 20px;
+    }
+
+    .livros,
+    .categorias {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-secao h2 {
+        font-size: 1.7rem;
+    }
+}
+
+.livro p {
+    color: #68766d;
+    margin-bottom: 15px;
+}
+
+.livro .autor {
+    color: #315b45;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.livro .categoria-livro {
+    display: inline-block;
+    background-color: #e9f0eb;
+    color: #315b45;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+
+
+
+/* ==============================
+   Página de estudo dos livros
+   ============================== */
+
+.conteudo-livro {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 25px 70px;
+}
+
+/* Cabeçalho do livro */
+
+.cabecalho-livro {
+    background: linear-gradient(135deg, #315b45, #5b8669);
+    color: white;
+    border-radius: 16px;
+    padding: 50px 40px;
+    margin-bottom: 35px;
+}
+
+.icone-livro {
+    display: block;
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.cabecalho-livro .destaque {
+    color: #dcebdd;
+}
+
+.cabecalho-livro h1 {
+    font-size: 2.7rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.cabecalho-livro > p:not(.destaque):not(.autor-livro) {
+    max-width: 700px;
+    font-size: 1.05rem;
+}
+
+.autor-livro {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Seções de conteúdo */
+
+.conteudo-secao {
+    background-color: #ffffff;
+    border: 1px solid #dce5df;
+    border-radius: 12px;
+    padding: 35px;
+    margin-bottom: 25px;
+}
+
+.conteudo-secao h2 {
+    color: #315b45;
+    font-size: 1.7rem;
+    margin: 8px 0 20px;
+}
+
+.conteudo-secao h3 {
+    color: #3f604d;
+    margin-top: 25px;
+    margin-bottom: 8px;
+}
+
+.conteudo-secao p {
+    color: #4f5e55;
+    margin-bottom: 16px;
+}
+
+.conteudo-secao ul,
+.conteudo-secao ol {
+    color: #4f5e55;
+    padding-left: 25px;
+}
+
+.conteudo-secao li {
+    margin-bottom: 8px;
+}
+
+/* Identificação dos módulos */
+
+.numero-modulo {
+    display: inline-block;
+    color: #5b8669;
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+}
+
+/* Caixas de apoio */
+
+.caixa-dica,
+.caixa-lembrete,
+.caixa-alerta {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.caixa-dica {
+    background-color: #e9f0eb;
+    border-left: 4px solid #5b8669;
+}
+
+.caixa-lembrete {
+    background-color: #f2f5f2;
+    border-left: 4px solid #315b45;
+}
+
+.caixa-alerta {
+    background-color: #f5f1e8;
+    border-left: 4px solid #8a7650;
+}
+
+.caixa-dica h3,
+.caixa-lembrete h3,
+.caixa-alerta h3 {
+    margin-top: 0;
+}
+
+.caixa-dica p,
+.caixa-lembrete p,
+.caixa-alerta p {
+    margin-bottom: 0;
+}
+
+/* Comparação de conceitos */
+
+.tabela-estudo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.tabela-estudo div {
+    background-color: #f6f8f5;
+    border: 1px solid #dce5df;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.tabela-estudo strong,
+.tabela-estudo span {
+    display: block;
+}
+
+.tabela-estudo strong {
+    color: #315b45;
+    margin-bottom: 5px;
+}
+
+.tabela-estudo span {
+    color: #68766d;
+}
+
+/* Atividade */
+
+.atividade {
+    background-color: #315b45;
+    color: white;
+    border-radius: 12px;
+    padding: 35px;
+    margin-bottom: 25px;
+}
+
+.atividade h2 {
+    margin: 8px 0 15px;
+}
+
+.atividade p {
+    color: #e9f0eb;
+    margin-bottom: 20px;
+}
+
+.atividade ol {
+    padding-left: 25px;
+}
+
+.atividade li {
+    margin-bottom: 12px;
+}
+
+/* Resumo */
+
+.resumo-livro {
+    background-color: #e9f0eb;
+    border-radius: 12px;
+    padding: 35px;
+}
+
+.resumo-livro h2 {
+    color: #315b45;
+    margin-bottom: 20px;
+}
+
+.resumo-livro ul {
+    padding-left: 25px;
+}
+
+.resumo-livro li {
+    color: #4f5e55;
+    margin-bottom: 10px;
+}
+
+/* Botão voltar */
+
+.navegacao-livro {
+    text-align: center;
+    margin-top: 35px;
+}
+
+/* Responsividade da página de estudo */
+
+@media (max-width: 650px) {
+
+    .conteudo-livro {
+        padding: 30px 20px 50px;
+    }
+
+    .cabecalho-livro {
+        padding: 35px 25px;
+    }
+
+    .cabecalho-livro h1 {
+        font-size: 2rem;
+    }
+
+    .conteudo-secao {
+        padding: 25px 20px;
+    }
+
+    .tabela-estudo {
+        grid-template-columns: 1fr;
+    }
+
+    .atividade,
+    .resumo-livro {
+        padding: 25px 20px;
+    }
+}
